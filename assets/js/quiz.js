@@ -1,0 +1,6 @@
+var StartQuiz = function () {
+    
+}
+
+
+startQuiz();
