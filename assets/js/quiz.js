@@ -1,9 +1,7 @@
 var startQuizBtn = document.querySelector("#start-quiz");
 var promptQuestion = document.querySelector("#prompt-question");
 var promptAnswers = document.querySelector("#prompt-answers");
-var timerEl = document.getElementById('#countdown');
-var mainEl = document.getElementById('#main');
-var startBtn = document.getElementById("#start-quiz");
+
 
 var questionIndex = 0;
 
@@ -49,41 +47,7 @@ function showQuizQuestion() {
     }
 }
 
-// Timer that counts down from 5
-function countdown() {
-    var timeLeft = 75;
-  
-    // Use the `setInterval()` method to call a function to be executed every 1000 milliseconds
-    var timeInterval = setInterval(function() {
-      if (timeLeft > 0) {
-        timerEl.textContent = timeLeft + ' time remaining';
-        timeLeft--;
-      } else {
-        timerEl.textContent = '';
-        clearInterval(timeInterval);
-        displayMessage();
-      }
-    }, 1000);
-  }
-
-  // Displays the message one word at a time
-function displayMessage() {
-  var wordCount = 0;
-
-  // Uses the `setInterval()` method to call a function to be executed every 300 milliseconds
-  var msgInterval = setInterval(function() {
-    if (words[wordCount] === undefined) {
-      clearInterval(msgInterval);
-    } else {
-      mainEl.textContent = words[wordCount];
-      wordCount++;
-    }
-  }, 300);
-}
-
-
 startQuizBtn.addEventListener('click', showQuizQuestion);
-startQuizBtn.addEventListener('click', countdown);
-startBtn.onclick = countdown;
+
 
 
